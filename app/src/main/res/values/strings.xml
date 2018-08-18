@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Student Database</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="marks">Marks</string>
+    <string name="add_data">Add Data</string>
+    <string name="reset">Reset</string>
 </resources>

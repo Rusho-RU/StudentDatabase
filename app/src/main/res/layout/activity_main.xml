@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/textName"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/textSurname"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:hint="@string/surname"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/textMarks"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:hint="@string/marks"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_data" />
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/reset" />
+
+</LinearLayout>
