@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -7,6 +7,8 @@
         android:id="@+id/textName"
         android:layout_width="match_parent"
         android:layout_height="58dp"
+        android:layout_above="@+id/textSurname"
+        android:layout_alignParentStart="true"
         android:ems="10"
         android:hint="@string/name"
         android:inputType="textPersonName"
@@ -16,6 +18,9 @@
         android:id="@+id/textSurname"
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:layout_above="@+id/textMarks"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-159dp"
         android:ems="10"
         android:hint="@string/surname"
         android:inputType="textPersonName" />
@@ -24,6 +29,9 @@
         android:id="@+id/textMarks"
         android:layout_width="match_parent"
         android:layout_height="62dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="154dp"
         android:ems="10"
         android:hint="@string/marks"
         android:inputType="textPersonName" />
@@ -32,12 +40,44 @@
         android:id="@+id/buttonAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="246dp"
         android:text="@string/add_data" />
 
     <Button
         android:id="@+id/buttonReset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/buttonViewAll"
         android:text="@string/reset" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/buttonViewAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/buttonAdd"
+        android:text="View All" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonReset"
+        android:layout_centerHorizontal="true"
+        android:text="Update" />
+
+    <EditText
+        android:id="@+id/editTextId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="ID"
+        android:inputType="textPersonName" />
+
+</RelativeLayout>

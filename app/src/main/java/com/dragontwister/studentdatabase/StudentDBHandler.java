@@ -1,9 +1,16 @@
 package com.dragontwister.studentdatabase;
 
+import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.CharArrayBuffer;
+import android.database.ContentObserver;
+import android.database.Cursor;
+import android.database.DataSetObserver;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
+import android.os.Bundle;
 
 public class StudentDBHandler extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "student.db";
@@ -29,7 +36,7 @@ public class StudentDBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean inserData(String name, String surname, String marks){
+    public boolean insertData(String name, String surname, String marks){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -41,4 +48,24 @@ public class StudentDBHandler extends SQLiteOpenHelper {
 
         return result != -1;
     }
+
+    public Cursor getAllData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("SELECT * FROM "+ TABLE_NAME, null);
+        return result;
+    }
+
+    public boolean updateData(String id, String name, String surname, String marks){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues value = new ContentValues();
+        value.put(COL_1, id);
+        value.put(COL_2, name);
+        value.put(COL_3, surname);
+        value.put(COL_4, marks);
+
+        db.update(TABLE_NAME, value, "ID = ?", new String[] { id });
+        return true;
+    }
+
+
 }
